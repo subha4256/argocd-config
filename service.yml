@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
-  labels:
-    app: nginx
+  name: php-website-service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "classic"  # Specify classic load balancer
+    service.beta.kubernetes.io/aws-load-balancer-name: "a7a9290d6861c40508899d1524e1832e"
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   selector:
-    app: nginx
+    app: php-website
