@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: php-website
-        image: azuresubha/092024:f0a83d48
+        image: azuresubha/092024:01d4b071
         ports:
         - containerPort: 80
